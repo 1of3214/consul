@@ -71,7 +71,7 @@ it:
         heading_id: "Sezione del Bilancio"
         title: "Titolo"
         description: "Descrizione"
-        external_url: "URL esterno1"
+        external_url: "URL esterno"
         location: "Luogo"
         administrator_id: "Amministratore"
         description: "Descrizione"
@@ -101,8 +101,8 @@ it:
         password: "Password"
         current_password: "Password attuale"
         phone_number: "Numero telefono"
-        official_position: "Posizione ufficiale"
-        official_level: "Livello ufficiale"
+        official_position: "Incarico ufficiale"
+        official_level: "Livello dell'incarico"
         redeemable_code: "Il codice di verifica che hai ricevuto via email"
       organization:
         name: "Nome dell'organizzazione"
@@ -112,7 +112,7 @@ it:
         association_name: "Nome Associazione"
         description: "Descrizione"
         external_url: "Link alla documentazione addizionale"
-        geozone_id: "Zona geografica"
+        geozone_id: "Ambito di attuazione"
         title: "Titolo"
       poll:
         name: "Nome"
@@ -126,9 +126,9 @@ it:
         description: "Descrizione"
         external_url: "Link alla documentazione addizionale"
       signature_sheet:
-        signable_type: "Tipo Firmabile"
-        signable_id: "ID Firmabile"
-        document_numbers: "Numeri documenti"
+        signable_type: "Tipo Foglio firme"
+        signable_id: "ID Proposta"
+        document_numbers: "Numero di documenti"
       site_customization/page:
         content: Contenuto
         created_at: Creato a
@@ -144,7 +144,7 @@ it:
         image: Immagine
       site_customization/content_block:
         name: Nome
-        locale: locale
+        locale: Lingua
         body: Testo
     errors:
       models:
