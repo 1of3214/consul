@@ -58,13 +58,13 @@ it:
     attributes:
       budget:
         name: "Nome"
-        description_accepting: "Descrizione durante la fase di Accettazione"
-        description_reviewing: "Descrizione durante la fase di Verifica"
-        description_selecting: "Descrizione durante la fase di Selezione"
-        description_valuating: "Descrizione durante la fase di Valutazione"
-        description_balloting: "Descrizione durante la fase di Voto"
-        description_reviewing_ballots: "Descrizione durante la fase di Verifica del voto"
-        description_finished: "Descrizione quando il Bilancio è completato"
+        description_accepting: "Descrizione durante la fase della Accettazione"
+        description_reviewing: "Descrizione durante la fase della Verifica"
+        description_selecting: "Descrizione durante la fase della Ricerca di appoggi"
+        description_valuating: "Descrizione durante la fase della Valutazione"
+        description_balloting: "Descrizione durante la fase del Voto"
+        description_reviewing_ballots: "Descrizione durante la fase della Verifica del voto"
+        description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
       budget/investment:
@@ -106,7 +106,7 @@ it:
         redeemable_code: "Il codice di verifica che hai ricevuto via email"
       organization:
         name: "Nome dell'organizzazione"
-        responsible_name: "La persona responsabile per il gruppo"
+        responsible_name: "La persona responsabile per l'organzzazione"
       spending_proposal:
         administrator_id: "Amministratore"
         association_name: "Nome Associazione"
