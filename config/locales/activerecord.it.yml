@@ -1,0 +1,193 @@
+it:
+  activerecord:
+    models:
+      activity:
+        one: "attività"
+        other: "attività"
+      budget:
+        one: "Bilancio partecipativo"
+        other: "Bilanci partecipativi"
+      budget/investment:
+        one: "Investimento"
+        other: "Investimenti"
+      comment:
+        one: "Commento"
+        other: "Commenti"
+      debate:
+        one: "Dibattito"
+        other: "Dibattiti"
+      tag:
+        one: "Tag"
+        other: "Tags"
+      user:
+        one: "Utente"
+        other: "Utenti"
+      moderator:
+        one: "Moderatore"
+        other: "Moderatori"
+      administrator:
+        one: "Amministratore"
+        other: "Amministratori"
+      vote:
+        one: "Voto"
+        other: "Voti"
+      organization:
+        one: "Organizzazione"
+        other: "Organizzazioni"
+      poll/booth:
+        one: "area di voto"
+        other: "aree di voto"
+      poll/officer:
+        one: "responsabile"
+        other: "responsabili"
+      proposal:
+        one: "Proposta cittadina"
+        other: "Proposte cittadine"
+      spending_proposal:
+        one: "Proposta di spesa"
+        other: "Proposte di spesa"
+      site_customization/page:
+        one: Pagina personalizzata
+        other: Pagine personalizzate
+      site_customization/image:
+        one: Immagine personalizzata
+        other: Immagini personalizzate
+      site_customization/content_block:
+        one: Blocco di contenuto personalizzato
+        other: Blocchi di contenuto personalizzato
+    attributes:
+      budget:
+        name: "Nome"
+        description_accepting: "Descrizione durante la fase di Accettazione"
+        description_reviewing: "Descrizione durante la fase di Verifica"
+        description_selecting: "Descrizione durante la fase di Selezione"
+        description_valuating: "Descrizione durante la fase di Valutazione"
+        description_balloting: "Descrizione durante la fase di Voto"
+        description_reviewing_ballots: "Descrizione durante la fase di Verifica del voto"
+        description_finished: "Descrizione quando il Bilancio è completato"
+        phase: "Fase"
+        currency_symbol: "Valuta"
+      budget/investment:
+        heading_id: "Sezione del Bilancio"
+        title: "Titolo"
+        description: "Descrizione"
+        external_url: "URL esterno1"
+        location: "Luogo"
+        administrator_id: "Amministratore"
+        description: "Descrizione"
+        external_url: "Link alla documentazione addizionale"
+        heading_id: "Intestazione"
+        title: "Titolo"
+        location: "Luogo"
+        organization_name: "Se stai facendo una proposta a nome di un collettivo/organizzazione, scrivine il nome"
+      comment:
+        body: "Commento"
+        user: "Utente"
+      debate:
+        author: "Autore"
+        description: "Opinione"
+        terms_of_service: "Termini di servizio"
+        title: "Titolo"
+      proposal:
+        author: "Autore"
+        title: "Titolo"
+        question: "Domanda"
+        description: "Descrizione"
+        terms_of_service: "Termini di servizio"
+      user:
+        email: "Email"
+        username: "Utente"
+        password_confirmation: "Conferma password"
+        password: "Password"
+        current_password: "Password attuale"
+        phone_number: "Numero telefono"
+        official_position: "Posizione ufficiale"
+        official_level: "Livello ufficiale"
+        redeemable_code: "Il codice di verifica che hai ricevuto via email"
+      organization:
+        name: "Nome dell'organizzazione"
+        responsible_name: "La persona responsabile per il gruppo"
+      spending_proposal:
+        administrator_id: "Amministratore"
+        association_name: "Nome Associazione"
+        description: "Descrizione"
+        external_url: "Link alla documentazione addizionale"
+        geozone_id: "Zona geografica"
+        title: "Titolo"
+      poll:
+        name: "Nome"
+        starts_at: "Data inizio"
+        ends_at: "Data chiusura"
+        geozone_restricted: "Ristretto alla zona geografica"
+      poll/question:
+        title: "Domanda"
+        valid_answers: "Possibili risposte"
+        summary: "Sommario"
+        description: "Descrizione"
+        external_url: "Link alla documentazione addizionale"
+      signature_sheet:
+        signable_type: "Tipo Firmabile"
+        signable_id: "ID Firmabile"
+        document_numbers: "Numeri documenti"
+      site_customization/page:
+        content: Contenuto
+        created_at: Creato a
+        subtitle: Sottotitolo
+        slug: Slug
+        status: Stato
+        title: Titolo
+        updated_at: Aggiornato a 
+        more_info_flag: Mostra in ulteriore pagina informativa
+        print_content_flag: Bottone di stampa
+      site_customization/image:
+        name: Nome
+        image: Immagine
+      site_customization/content_block:
+        name: Nome
+        locale: locale
+        body: Testo
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Questo utente ha già una password"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le tags devono essere minori o uguali a %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Hai raggiunto il numero massimo di messaggi privati giornalieri"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Il documento non è presente negli archivi istituzionali"
+              has_voted: "L'utente ha già votato"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le tags devono essere minori o uguali a %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le tags devono essere minori o uguali a %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Devi aspettare almeno %{interval} giorni tra le notifiche"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Il documento non è stato verificato negli archivi istituzionali'
+              already_voted: 'Proposta già votata'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "devono essere lettere, numeri, caratteri come _ e -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "La dimensione deve essere %{required_width}px"
+              image_height: "L'altezza deve essere %{required_height}px"
