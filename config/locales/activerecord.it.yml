@@ -176,7 +176,7 @@ it:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "Devi aspettare almeno %{interval} giorni tra le notifiche"
+              invalid: "Devi aspettare almeno %{interval} giorni dalle notifiche"
         signature:
           attributes:
             document_number:
