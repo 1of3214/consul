@@ -112,13 +112,13 @@ it:
         association_name: "Nome Associazione"
         description: "Descrizione"
         external_url: "Link alla documentazione addizionale"
-        geozone_id: "Ambito di attuazione"
+        geozone_id: "Zona di attuazione"
         title: "Titolo"
       poll:
         name: "Nome"
         starts_at: "Data inizio"
         ends_at: "Data chiusura"
-        geozone_restricted: "Ristretto alla zona geografica"
+        geozone_restricted: "Ristretto alla zona"
       poll/question:
         title: "Domanda"
         valid_answers: "Possibili risposte"
