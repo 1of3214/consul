@@ -180,8 +180,8 @@ it:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Il documento non è stato verificato negli archivi istituzionali'
-              already_voted: 'Proposta già votata'
+              not_in_census: "Il documento non è stato verificato negli archivi istituzionali"
+              already_voted: "Proposta già votata"
         site_customization/page:
           attributes:
             slug:
