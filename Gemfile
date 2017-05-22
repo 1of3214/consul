@@ -100,6 +100,7 @@ group :test do
   gem 'email_spec'
 end
 
+gem 'rails_12factor', group: :production
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '3.3.0'
