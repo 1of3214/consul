@@ -246,7 +246,7 @@ Devise.setup do |config|
   config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
   config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: 'email', info_fields: 'email,name,verified'
   config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
-  config.omniauth :wordpress_hosted, Rails.application.secrets.wordpress_key, Rails.application.secrets.wordpress_secret, strategy_class: OmniAuth::Strategies::WordpressHosted, client_options: { site: 'http://3214.org' }
+  config.omniauth :wordpress_hosted, Rails.application.secrets.wordpress_key, Rails.application.secrets.wordpress_secret, strategy_class: OmniAuth::Strategies::WordpressHosted, client_options: { site: 'http://incomune.org' }
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
