@@ -259,6 +259,10 @@ en:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
       name: Twitter
+    wordpress:
+      sign_in: Sign in with Wordpress
+      sign_up: Sign up with Wordpress
+      name: Wordpress
     info_sign_in: "Sign in with:"
     info_sign_up: "Sign up with:"
     or_fill: "Or fill the following form:"

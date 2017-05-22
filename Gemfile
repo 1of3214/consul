@@ -30,6 +30,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
+gem 'omniauth-wordpress_hosted', github: 'jwickard/omniauth-wordpress-oauth2-plugin'
 
 gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'

@@ -1,4 +1,4 @@
-<% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
+<% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) || feature?(:wordpress_login) %>
 
   <% if current_page?(new_user_session_path) %>
     <div class="row">
@@ -29,6 +29,14 @@
           <%= link_to t("omniauth.google_oauth2.name"), user_omniauth_authorize_path(:google_oauth2),
                       title: t("omniauth.google_oauth2.sign_in"),
                       class: "button-google button expanded" %>
+        </div>
+      <% end %>
+
+      <% if feature? :wordpress_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to t("omniauth.wordpress.name"), user_omniauth_authorize_path(:wordpress_hosted),
+                      title: t("omniauth.wordpress.sign_in"),
+                      class: "button-wordpress button expanded" %>
         </div>
       <% end %>
 
@@ -66,6 +74,14 @@
           <%= link_to t("omniauth.google_oauth2.name"), user_omniauth_authorize_path(:google_oauth2),
                       title: t("omniauth.google_oauth2.sign_up"),
                       class: "button-google button expanded" %>
+        </div>
+      <% end %>
+
+      <% if feature? :wordpress_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to t("omniauth.wordpress.name"), user_omniauth_authorize_path(:wordpress_hosted),
+                      title: t("omniauth.wordpress.sign_in"),
+                      class: "button-wordpress button expanded" %>
         </div>
       <% end %>
 
