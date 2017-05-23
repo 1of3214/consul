@@ -18,9 +18,7 @@ module Budgets
         load_investment
         load_heading
 
-        unless @ballot.add_investment(@investment)
-          head :bad_request
-        end
+        @ballot.add_investment(@investment)
       end
 
       def destroy
@@ -29,7 +27,6 @@ module Budgets
 
         @line.destroy
         load_investments
-        #@ballot.reset_geozone
       end
 
       private
@@ -56,7 +53,7 @@ module Budgets
 
         def load_investments
           if params[:investments_ids].present?
-            @investment_ids = params[:investment_ids]
+            @investment_ids = params[:investments_ids]
             @investments = Budget::Investment.where(id: params[:investments_ids])
           end
         end

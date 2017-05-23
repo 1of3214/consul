@@ -211,7 +211,7 @@ feature 'Budget Investments' do
       expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
     end
 
-    scenario 'Create notice' do
+    scenario 'Create' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
@@ -220,15 +220,24 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_title', with: 'Build a skyscraper'
       fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
       fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
+      fill_in 'budget_investment_location', with: 'City center'
+      fill_in 'budget_investment_organization_name', with: 'T.I.A.'
+      fill_in 'budget_investment_tag_list', with: 'Towers'
       check   'budget_investment_terms_of_service'
 
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
+      expect(page).to have_content 'Build a skyscraper'
+      expect(page).to have_content 'I want to live in a high tower over the clouds'
+      expect(page).to have_content 'http://http://skyscraperpage.com/'
+      expect(page).to have_content 'City center'
+      expect(page).to have_content 'T.I.A.'
+      expect(page).to have_content 'Towers'
 
       visit user_url(author, filter: :budget_investments)
-      expect(page).to have_content "1 Investment"
-      expect(page).to have_content "Build a skyscraper"
+      expect(page).to have_content '1 Investment'
+      expect(page).to have_content 'Build a skyscraper'
     end
 
     scenario 'Errors on create' do
@@ -670,25 +679,51 @@ feature 'Budget Investments' do
       expect(page).to_not have_link("Vote")
     end
 
-    scenario "Reclassification" do
-      user = create(:user, :level_two)
-      investment = create(:budget_investment, :selected, heading: heading)
-      heading2 = create(:budget_heading, group: group)
+    feature "Reclassification" do
 
-      ballot = create(:budget_ballot, user: user, budget: budget)
-      ballot.investments << investment
+      scenario "Due to heading change" do
+        user = create(:user, :level_two)
+        investment = create(:budget_investment, :selected, heading: heading)
+        heading2 = create(:budget_heading, group: group)
 
-      login_as(user)
-      visit budget_ballot_path(budget)
+        ballot = create(:budget_ballot, user: user, budget: budget)
+        ballot.investments << investment
 
-      expect(page).to have_content("You have voted one investment")
+        login_as(user)
+        visit budget_ballot_path(budget)
 
-      investment.heading = heading2
-      investment.save
+        expect(page).to have_content("You have voted one investment")
 
-      visit budget_ballot_path(budget)
+        investment.heading = heading2
+        investment.save
 
-      expect(page).to have_content("You have voted 0 investment")
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted 0 investment")
+      end
+
+      scenario "Due to being unfeasible" do
+        user = create(:user, :level_two)
+        investment = create(:budget_investment, :selected, heading: heading)
+        heading2 = create(:budget_heading, group: group)
+
+        ballot = create(:budget_ballot, user: user, budget: budget)
+        ballot.investments << investment
+
+        login_as(user)
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted one investment")
+
+        investment.feasibility = "unfeasible"
+        investment.unfeasibility_explanation = "too expensive"
+        investment.save
+
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted 0 investment")
+      end
+
     end
   end
 end
